@@ -1,4 +1,5 @@
 #include "Arduino.h"
+#include "config.h"
 
 
 #define BAUD        115200
@@ -6,8 +7,7 @@
 #define GREEN_PIN   17
 #define BLUE_PIN    18
 
-// Enable if common anode
-#define COMMON      1
+const uint8_t RGB[3] = { 224, 10, 151 };
 
 
 void init_led(uint8_t pr, uint8_t pg, uint8_t pb);
@@ -24,7 +24,7 @@ void setup()
 
 void loop()
 {
-    set_led(226, 0, 0);
+    set_led(RGB[0], RGB[1], RGB[2]);
     delay(500);
 }
 
